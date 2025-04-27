@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:id="@+id/server_ip_kj"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:text="Low Frequency Antenna Transmitter" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/hint_textView_Rb"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.8"
+            android:gravity="center"
+            android:text="RB(Baud):"
+            android:textSize="18dp"/>
+
+        <EditText
+            android:id="@+id/editTextRb"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:hint="Input RB(Baud)"
+            android:text="20" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/hint_textView_Vpp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.8"
+            android:gravity="center"
+            android:text="Amplitude(±Vpp):"
+            android:textSize="15dp"
+            />
+        <EditText
+            android:id="@+id/editTextVpp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:text="5"
+            android:hint="Input Vpp"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/hint_textView_JPG"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.8"
+            android:gravity="center"
+            android:text="Compress quality:"
+            android:textSize="15dp"/>
+
+        <EditText
+            android:id="@+id/editText_JPG"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:hint="Input a 0-100 integer"
+            android:text="100" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/modul"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3.5"
+            android:gravity="center"
+            android:text="Modulation:"
+            android:textSize="15dp" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:layout_below="@id/editTextVpp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radioButton2FSK"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2FSK"
+                />
+
+            <RadioButton
+                android:id="@+id/radioButton4FSK"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4FSK"
+                android:checked="true"
+                />
+        </RadioGroup>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView_frequency"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.5"
+            android:gravity="center"
+            android:text="f1,f2,f3,f4(Hz):"
+            android:textSize="18dp"/>
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:entries="@array/spinner_options"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            />
+    </LinearLayout>
+    <EditText
+        android:id="@+id/send_data_kj"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="Input information to be transmitted"/>
+    <Button
+        android:id="@+id/connect_btn_kj"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Connect to server" />
+
+    <Button
+        android:id="@+id/send_btn_kj"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:enabled="false"
+        android:text="Send control signal" />
+    <Button
+        android:id="@+id/send_btn_kj2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:enabled="false"
+        android:text="Send information signal" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/img_disp_btn"
+            android:layout_width="140dp"
+            android:layout_height="50dp"
+            android:enabled="false"
+            android:text="Select image" />
+        <Button
+            android:id="@+id/img_send_btn"
+            android:layout_width="140dp"
+            android:layout_height="50dp"
+            android:enabled="false"
+            android:text="Send image" />
+        <TextView
+            android:id="@+id/text_view_img_size"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.5"
+            android:gravity="center"
+            android:text="size"
+            android:textSize="14dp"
+            />
+
+    </LinearLayout>
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scaleType="center"
+        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+</LinearLayout>

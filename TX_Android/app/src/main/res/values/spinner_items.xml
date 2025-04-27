@@ -1,0 +1,7 @@
+
+<resources>
+    <string-array name="spinner_options">
+    <item>选项1</item>
+    <item>选项2</item>
+    </string-array>
+</resources>
